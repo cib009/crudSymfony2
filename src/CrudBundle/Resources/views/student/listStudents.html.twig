@@ -1,0 +1,51 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <p><a href="{{
+        path(
+        '_CreateStudent'
+        )
+        }}" class="btn btn-block btn-lg btn-primary BackButtons">
+            Crear Nuevo estudiante
+    </a></p>
+    <p><a href="{{
+        path(
+        '_listClassroom'
+        )
+        }}" class="btn btn-block btn-lg btn-primary BackButtons">
+            Ver las aulas
+    </a></p>
+        {% if students is not empty %}
+            <div class="fieldsTable">
+                <p class="rowTable"> Nombre</p>
+                <p class="rowTable"> Apellidos</p>
+                <p class="rowTable"> Clase</p>
+                <p class="rowTable"> Visualizar Alumno</p>
+                <p class="rowTable"> Editar Alumno</p>
+            </div>
+            {% for student in students %}
+               <div class="fieldsTable">
+                   <p class="rowTable"> {{ student.name }}</p>
+                   <p class="rowTable"> {{ student.surname }}</p>
+                   <p class="rowTable"> {{ student.Classroom }}</p>
+                   <p class="rowTable"><a href="{{
+                        path(
+                        '_StudentById',
+                        { 'id': student.id }
+                        )
+                        }}">
+                           Ver
+                   </a></p>
+                   <p class="rowTable"><a href="{{
+                        path(
+                        '_UpdateStudent',
+                        { 'id': student.id }
+                        )
+                        }}">
+                           editar
+                   </a></p>
+               </div>
+            {% endfor %}
+        {% else %}
+            <p>No existe ningún resultado</p>
+        {% endif %}
+{% endblock %}

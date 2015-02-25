@@ -1,0 +1,25 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <p><a href="{{
+        path(
+        '_listStudents'
+        )
+        }}" class="btn btn-block btn-lg btn-primary BackButtons">
+            Ver todos los estudiantes
+    </a></p>
+    <div class="fieldsTable">
+        {% if student is not empty %}
+                <p class="rowTable"> {{ student.name }}</p>
+                <p class="rowTable"> {{ student.surname }}</p>
+                <p class="rowTable"> {{ student.classroom }}</p>
+                <p class="rowTable"><a href="{{
+                    path(
+                    '_UpdateStudent',
+                    { 'id': student.id }
+                    )
+                    }}">
+                        editar
+                </a></p>
+        {% endif %}
+    </div>
+{% endblock %}

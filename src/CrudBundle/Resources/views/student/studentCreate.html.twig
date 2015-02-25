@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <p><a href="{{
+        path(
+        '_listStudents'
+        )
+        }}" class="btn btn-block btn-lg btn-primary BackButtons">
+            Ver todos los estudiantes
+    </a></p>
+    <div class="fieldsTable">
+        <form action="{{ path('_CreateStudent') }}" method="post" {{ form_enctype(form) }} class="AddUserForm">
+            {{ form_errors(form.name) }}
+            {{ form_errors(form.surname) }}
+            {{ form_errors(form.Classroom) }}
+            {{ form_errors(form) }}
+            <p>
+                {{ form_label(form.name, '* Nombre del alumno') }}
+                {{ form_widget(form.name) }}
+            </p>
+            <p>
+                {{ form_label(form.surname, '* Apellido del alumno') }}
+                {{ form_widget(form.surname) }}
+            </p>
+            <p>
+                {{ form_label(form.Classroom, '* Aula') }}
+                {{ form_widget(form.Classroom) }}
+            </p>
+            {{ form_rest(form) }}
+
+            <input type="submit" value="Crear estudiante!"/>
+        </form>
+    </div>
+{% endblock %}

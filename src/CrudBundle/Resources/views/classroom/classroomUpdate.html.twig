@@ -1,0 +1,25 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <p><a href="{{
+        path(
+        '_listClassroom'
+        )
+        }}" class="btn btn-block btn-lg btn-primary BackButtons">
+            Ver todas la aulas
+        </a></p>
+    <div class="fieldsTable">
+        <form action="{{ path('_UpdateClassroom', {'id':id}) }}" method="post" {{ form_enctype(form) }} class="AddUserForm">
+            <p>
+                {{ form_errors(form.nombre) }}
+                {{ form_errors(form) }}
+            </p>
+            <p>
+                {{ form_label(form.nombre, '* Nombre de la aula') }}
+                {{ form_widget(form.nombre) }}
+            </p>
+            {{ form_rest(form) }}
+
+            <input type="submit" value="Actualizar aula!"/>
+        </form>
+    </div>
+{% endblock %}

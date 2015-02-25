@@ -1,0 +1,24 @@
+.BackButtons{
+    width: auto;
+    float: left;
+    margin: 5px;
+    margin-bottom: 40px
+}
+
+.actionsButtons{
+    width: auto;
+    float: left
+}
+
+.fieldsTable{
+    width: auto;
+    clear: both;
+    margin: 5px;
+}
+
+.rowTable{
+    width: 15%;
+    float: left;
+    margin-right:30px;
+}
+

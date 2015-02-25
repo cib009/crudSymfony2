@@ -1,0 +1,48 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+    <p><a href="{{
+        path(
+        '_CreateClassroom'
+        )
+        }}" class="btn btn-block btn-lg btn-primary BackButtons">
+            Crear Nueva aula
+        </a></p>
+        <p><a href="{{
+        path(
+        '_listStudents'
+        )
+        }}" class="btn btn-block btn-lg btn-primary BackButtons">
+            Ver los estudiantes
+        </a></p>
+
+    {% if classroom is not empty %}
+        <div class="fieldsTable">
+            <p class="rowTable">Nombre</p>
+            <p class="rowTable">Visualizar aula</p>
+            <p class="rowTable">Editar aula</p>
+        </div>
+        {% for class in classroom %}
+            <div class="fieldsTable">
+                <p class="rowTable"> {{ class.nombre }}</p>
+                <p class="rowTable"><a href="{{
+                    path(
+                    '_ClassById',
+                    { 'id': class.id }
+                    )
+                    }}">
+                        Ver
+                </a></p>
+                <p class="rowTable"><a href="{{
+                    path(
+                    '_UpdateClassroom',
+                    { 'id': class.id }
+                    )
+                    }}">
+                        editar
+                </a></p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No existe ningún resultado</p>
+    {% endif %}
+{% endblock %}

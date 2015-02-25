@@ -1,0 +1,35 @@
+_listStudents:
+    path:     /listStudents/
+    defaults: { _controller: CrudBundle:Crud:ListStudents }
+
+_StudentById:
+    path:     /listStudents/student/{id}
+    defaults: { _controller: CrudBundle:Crud:ListStudentsById }
+
+_CreateStudent:
+    path:     /listStudents/create
+    defaults: { _controller: CrudBundle:Crud:CreateStudent }
+
+_UpdateStudent:
+    path:     /listStudents/edit/{id}
+    defaults: { _controller: CrudBundle:Crud:UpdateStudent }
+
+_listClassroom:
+    path:     /listClassroom/
+    defaults: { _controller: CrudBundle:Crud:ListClassroom }
+
+_listClassroomHome:
+    path:     /
+    defaults: { _controller: CrudBundle:Crud:ListClassroom }
+
+_ClassById:
+    path:     /listClassroom/class/{id}
+    defaults: { _controller: CrudBundle:Crud:ListClassroomById }
+
+_CreateClassroom:
+    path:     /listClassroom/create
+    defaults: { _controller: CrudBundle:Crud:CreateClassroom }
+
+_UpdateClassroom:
+    path:     /listClassroom/edit/{id}
+    defaults: { _controller: CrudBundle:Crud:UpdateClassroom }
