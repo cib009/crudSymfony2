@@ -15,3 +15,6 @@ php app/console server:run
 
 # Ejecutar selenium server
 java -jar bin/selenium-server-standalone-2.44.0.jar
+
+# Ejecutar test
+bin/behat
